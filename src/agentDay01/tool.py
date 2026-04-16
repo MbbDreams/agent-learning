@@ -34,10 +34,12 @@ Final Answer: 给出最终答案
 现在开始。
 """
 from openai import OpenAI
+import os
 
+api_key = os.getenv("OPENAI_API_KEY")
 def call_llm(prompt):
     client = OpenAI(
-        api_key="sk-lFB02hEtWgkT9Cy38cE6EaBdA64644Bc96E447F93772C7Cf",
+        api_key=api_key,
         base_url="https://aihubmix.com/v1"
     )
     response = client.chat.completions.create(
